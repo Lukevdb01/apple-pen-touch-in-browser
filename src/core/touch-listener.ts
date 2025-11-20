@@ -155,19 +155,21 @@ class TouchListener {
 
         for (const ev of ["touchend", "touchleave", "mouseup"]) {
             canvas.addEventListener(ev, (e: any) => {
-                let pressure = 0.1;
-                let x, y;
+                // TODO: Further implement apple touch functionality
+
+                // let pressure = 0.1;
+                // let x, y;
 
                 if (e.touches && e.touches[0] && typeof e.touches[0]["force"] !== "undefined") {
                     if (e.touches[0]["force"] > 0) {
-                        pressure = e.touches[0]["force"];
+                        // pressure = e.touches[0]["force"];
                     }
-                    x = e.touches[0].pageX * 2;
-                    y = e.touches[0].pageY * 2;
+                    // x = e.touches[0].pageX * 2;
+                    // y = e.touches[0].pageY * 2;
                 } else {
-                    pressure = 1.0;
-                    x = e.pageX * 2;
-                    y = e.pageY * 2;
+                    // pressure = 1.0;
+                    // x = e.pageX * 2;
+                    // y = e.pageY * 2;
                 }
 
                 this.isMouseDown = false;
